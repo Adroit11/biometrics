@@ -8,6 +8,9 @@
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    # Use https
+    RewriteCond %{SERVER_PORT} 80 
+    RewriteRule ^(.*)$ https://mighty-lowlands-23798.herokuapp.com/$1 [R,L]
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
@@ -18,9 +21,4 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-
-    # Use https
-    RewriteEngine On 
-    RewriteCond %{SERVER_PORT} 80 
-    RewriteRule ^(.*)$ https://mighty-lowlands-23798.herokuapp.com/$1 [R,L]
 </IfModule>
