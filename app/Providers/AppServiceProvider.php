@@ -30,7 +30,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         if($this->app->environment('production')) {
-            dd('adroit');
             URL::forceScheme('https');
         }
     }
