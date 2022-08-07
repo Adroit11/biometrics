@@ -6,6 +6,7 @@ use App\Http\Responses\LoginViewResponse;
 use App\Http\Responses\RegisterViewResponse;
 use Illuminate\Support\ServiceProvider;
 use LaravelWebauthn\Services\Webauthn;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +29,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        if($this->app->environment('production')) {
+            dd('adroit');
+            URL::forceScheme('https');
+        }
     }
 }
