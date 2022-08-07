@@ -4,17 +4,6 @@ import vue from '@vitejs/plugin-vue';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 
 export default defineConfig({
-    build: {
-        // generate manifest.json in outDir
-        manifest: true,
-        rollupOptions: {
-        // overwrite default .html entry
-            input: [
-                'resources/css/app.css',
-                'resources/js/app.js',
-            ],
-        }
-    },
     plugins: [
         laravel({
             input: [
