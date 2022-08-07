@@ -11,8 +11,8 @@
 
         <!-- Scripts -->
         @routes
-        <link rel="stylesheet" href="{{ asset('build/assets/app.83a5e165.css') }}">
-        <script type="module" src="{{ asset('build/assets/app.0cb150c9.js') }}"></script>
+        <link rel="stylesheet" href="{{ secure_asset('build/assets/app.83a5e165.css') }}">
+        <script type="module" src="{{ secure_asset('build/assets/app.0cb150c9.js') }}"></script>
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
