@@ -32,7 +32,7 @@ class NimcTableSeeder extends Seeder
             'birthcountry' => 'Nigeria',
             'central_id' => 'NG-09122222229',
             'religion' => 'Christian',
-            'Gender' => 'Female',
+            'gender' => 'Female',
         ]);
 
         Nimc::create([
@@ -48,7 +48,7 @@ class NimcTableSeeder extends Seeder
             'birthcountry' => 'Nigeria',
             'central_id' => 'NG-0912223429',
             'religion' => 'Christian',
-            'Gender' => 'Male',
+            'gender' => 'Male',
         ]);
 
         Nimc::create([
@@ -64,7 +64,7 @@ class NimcTableSeeder extends Seeder
             'birthcountry' => 'Nigeria',
             'central_id' => 'NG-09122222210',
             'religion' => 'Muslim',
-            'Gender' => 'Male',
+            'gender' => 'Male',
         ]);
     }
 }
