@@ -28,6 +28,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'state_of_origin',
+        'lga',
+        'state_of_residence',
+        'address',
+        'profession',
+        'birthdate',
+        'birthplace',
+        'birthcountry',
+        'central_id',
+        'religion',
+        'gender',
+        'voters_id',
     ];
 
     /**

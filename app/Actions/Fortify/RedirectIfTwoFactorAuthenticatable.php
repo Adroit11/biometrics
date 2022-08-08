@@ -66,7 +66,7 @@ class RedirectIfTwoFactorAuthenticatable
      */
     protected function validateCredentials($request)
     {
-        return tap(User::where('email', $request->email)->first(), function ($user) use ($request) {
+        return tap(User::where('central_id', $request->nin)->first(), function ($user) use ($request) {
             if (! $user || ! $this->guard->getProvider()->validateCredentials($user, ['password' => $request->password])) {
                 $this->fireFailedEvent($request, $user);
 

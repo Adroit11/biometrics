@@ -22,7 +22,7 @@ const webauthn = ref(true);
 const publicKeyRef = ref(null);
 
 const form = useForm({
-    email: '',
+    nin: '',
     password: '',
     remember: false,
 });
@@ -82,11 +82,11 @@ const reload = () => {
 
         <form v-else @submit.prevent="submit">
             <div>
-                <JetLabel for="email" value="Email" />
+                <JetLabel for="nin" value="NIN" />
                 <JetInput
-                    id="email"
-                    v-model="form.email"
-                    type="email"
+                    id="nin"
+                    v-model="form.nin"
+                    type="string"
                     class="mt-1 block w-full"
                     required
                     autofocus
