@@ -31,7 +31,6 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
 
         $arc = Nimc::where('central_id', $input['nin'])->first();
-        dd($arc);
 
         if ($arc) {
             $user = new User($arc);
