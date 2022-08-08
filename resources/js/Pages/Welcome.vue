@@ -48,20 +48,14 @@ defineProps({
                             </div>
                         </div>
 
-                        <div class="m-8">
-                            <Link :href="route('login')" class="text-lg text-gray-100 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition mr-4">
+                        <div class="m-8 flex flex-col">
+                            <Link :href="route('login')" class="w-full text-lg text-gray-100 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition mr-4">
                                 Log in
                             </Link>
 
-                            <Link v-if="canRegister" :href="route('register')" class="text-lg text-gray-100 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
+                            <Link v-if="canRegister" :href="route('register')" class="w-full text-lg text-gray-100 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
                                 Register
                             </Link>
-                        </div>
-
-                        <div>
-                            <div class="text-teal-600 dark:text-teal-400 text-xl">
-                                <strong>Accounts are automatically deleted after 24h.</strong>
-                            </div>
                         </div>
                     </div>
 
