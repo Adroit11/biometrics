@@ -82,14 +82,13 @@ const reload = () => {
 
         <form v-else @submit.prevent="submit">
             <div>
-                <JetLabel for="nin" value="NIN" />
+                <JetLabel for="nin" value="National Iden No." />
                 <JetInput
                     id="nin"
                     v-model="form.nin"
                     type="string"
                     class="mt-1 block w-full"
                     required
-                    autofocus
                 />
             </div>
 
