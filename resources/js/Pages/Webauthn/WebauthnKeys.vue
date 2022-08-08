@@ -120,8 +120,8 @@ const webauthnRegisterCallback = (data) => {
         </div>
 
         <div v-else class="p-6 sm:px-20 bg-white border-b border-gray-200">
-            <h1 class="font-semibold text-xl text-gray-900 leading-tight mb-8">
-                Manage your Webauthn Keys
+            <h1 class="font-semibold text-lg text-gray-900 leading-tight mb-8">
+                Manage your biometric data to be able to commence voting via any suppoted devices online!
             </h1>
 
             <p v-if="webauthnKeys.length > 0" class="text-lg bg-teal-50 border-t-2 border-teal-200 rounded-b mb-4 px-4 py-8 shadow-md">
@@ -146,7 +146,7 @@ const webauthnRegisterCallback = (data) => {
                     <tbody class="bg-white divide-y divide-gray-200">
                         <tr v-if="webauthnKeys.length === 0">
                             <td colspan="3" class="px-6 py-4 whitespace-nowrap text-center">
-                                <em>No keys registered yet</em>
+                                <em>No biometric data registered yet</em>
                             </td>
                         </tr>
                         <tr v-for="key in webauthnKeys" :key="key.id">
@@ -178,7 +178,7 @@ const webauthnRegisterCallback = (data) => {
             <div class="mt-8 text-2xl">
                 <!-- <JetConfirmsPassword @confirmed="showRegisterModal"> -->
                     <JetButton type="button" @click="showRegisterModal">
-                        Register a new key
+                        Register a new biometric data
                     </JetButton>
                 <!-- </JetConfirmsPassword> -->
             </div>

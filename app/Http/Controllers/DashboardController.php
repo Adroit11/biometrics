@@ -22,6 +22,7 @@ class DashboardController extends Controller
                 return [
                     'id' => $key->id,
                     'name' => $key->name,
+                    'voters_id' => $key->voters_id,
                     'type' => $key->type,
                     'last_active' => $key->updated_at->diffForHumans(),
                 ];
