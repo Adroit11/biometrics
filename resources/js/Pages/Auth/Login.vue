@@ -86,7 +86,7 @@ const reload = () => {
                 <JetInput
                     id="nin"
                     v-model="form.nin"
-                    type="string"
+                    type="text"
                     class="mt-1 block w-full"
                     required
                 />
