@@ -33,7 +33,7 @@ class CreateNewUser implements CreatesNewUsers
         $arc = Nimc::where('central_id', $input['nin'])->first();
 
         if ($arc) {
-            $user = new User($arc);
+            $user = new User();
             $user->name = $input['name'];
             $user->email = $input['email'];
             $user->password = Hash::make($input['password']);
