@@ -59,6 +59,17 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
+                <JetLabel for="email" value="Email" />
+                <JetInput
+                    id="email"
+                    v-model="form.email"
+                    type="email"
+                    class="mt-1 block w-full"
+                    required
+                />
+            </div>
+
+            <div class="mt-4">
                 <JetLabel for="password" value="Create Password" />
                 <JetInput
                     id="password"
