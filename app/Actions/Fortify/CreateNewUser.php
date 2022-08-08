@@ -49,7 +49,6 @@ class CreateNewUser implements CreatesNewUsers
             $user->religion = $arc->religion;
             $user->gender = $arc->gender;
             $user->voters_id = uniqid();
-            dd($user);
             return $user->save();
         }else{
             throw ValidationException::withMessages([
