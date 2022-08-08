@@ -11,6 +11,7 @@ import JetValidationErrors from '@/Jetstream/ValidationErrors.vue';
 const form = useForm({
     name: '',
     nin: '',
+    email: '',
     password: '',
     password_confirmation: '',
     terms: false,
