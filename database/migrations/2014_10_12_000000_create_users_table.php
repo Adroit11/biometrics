@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('state_of _origin');
+            $table->string('state_of_origin');
             $table->string('lga');
             $table->string('state_of_residence');
             $table->string('address');

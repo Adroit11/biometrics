@@ -33,23 +33,40 @@ class CreateNewUser implements CreatesNewUsers
         $arc = Nimc::where('central_id', $input['nin'])->first();
 
         if ($arc) {
-            $user = new User();
-            $user->name = $input['name'];
-            $user->email = $input['email'];
-            $user->password = Hash::make($input['password']);
-            $user->state_of_origin = $arc->state_of_origin;
-            $user->lga = $arc->lga;
-            $user->state_of_residence = $arc->state_of_residence;
-            $user->address = $arc->address;
-            $user->profession = $arc->profession;
-            $user->birthdate = $arc->birthdate;
-            $user->birthplace = $arc->birthplace;
-            $user->birthcountry = $arc->birthcountry;
-            $user->central_id = $arc->central_id;
-            $user->religion = $arc->religion;
-            $user->gender = $arc->gender;
-            $user->voters_id = uniqid();
-            return $user->save();
+            // $user = new User();
+            // $user->name = $input['name'];
+            // $user->email = $input['email'];
+            // $user->password = Hash::make($input['password']);
+            // $user->state_of_origin = $arc->state_of_origin;
+            // $user->lga = $arc->lga;
+            // $user->state_of_residence = $arc->state_of_residence;
+            // $user->address = $arc->address;
+            // $user->profession = $arc->profession;
+            // $user->birthdate = $arc->birthdate;
+            // $user->birthplace = $arc->birthplace;
+            // $user->birthcountry = $arc->birthcountry;
+            // $user->central_id = $arc->central_id;
+            // $user->religion = $arc->religion;
+            // $user->gender = $arc->gender;
+            // $user->voters_id = uniqid();
+            // return $user->save();
+            return User::create([
+                'name' => $input['name'],
+                'email' => $input['email'],
+                'password' => Hash::make($input['password']),
+                'state_of_origin' => $arc->state_of_origin,
+                'lga' => $arc->lga,
+                'state_of_residence' => $arc->state_of_residence,
+                'address' => $arc->address,
+                'profession' => $arc->profession,
+                'birthdate' => $arc->birthdate,
+                'birthplace' => $arc->birthplace,
+                'birthcountry' => $arc->birthcountry,
+                'central_id' => $arc->central_id,
+                'religion' => $arc->religion,
+                'gender' => $arc->gender,
+                'voters_id' => uniqid(),
+            ]);
         }else{
             throw ValidationException::withMessages([
                 "nin" => ['The nin details supplied is not valid, please supply  a valid nin or contact Nimc.'],
