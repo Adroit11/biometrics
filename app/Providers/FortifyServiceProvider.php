@@ -37,9 +37,17 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Fortify::authenticateUsing(function (Request $request) {
+            $user = User::where('central_id', $request->nin)->first();
+            if ($user &&
+                Hash::check($request->password, $user->password)) {
+                return $user;
+            }
+        });
+        
         Fortify::authenticateThrough(fn () => [
             RedirectIfTwoFactorAuthenticatable::class,
-            AttemptToAuthenticate::class,
+            // AttemptToAuthenticate::class,
             PrepareAuthenticatedSession::class,
         ]);
 
@@ -60,13 +68,6 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
         Fortify::twoFactorChallengeView(function () {
             return new TwoFactorChallengeView();
-        });
-        Fortify::authenticateUsing(function (Request $request) {
-            $user = User::where('central_id', $request->nin)->first();
-            if ($user &&
-                Hash::check($request->password, $user->password)) {
-                return $user;
-            }
         });
 
         RateLimiter::for('login', function (Request $request) {
