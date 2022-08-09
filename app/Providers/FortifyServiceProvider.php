@@ -53,6 +53,7 @@ class FortifyServiceProvider extends ServiceProvider
             ]) : true;
         });
 
+
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
@@ -60,11 +61,18 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::twoFactorChallengeView(function () {
             return new TwoFactorChallengeView();
         });
+        Fortify::authenticateUsing(function (Request $request) {
+            $user = User::where('central_id', $request->nin)->first();
+            if ($user &&
+                Hash::check($request->password, $user->password)) {
+                return $user;
+            }
+        });
 
         RateLimiter::for('login', function (Request $request) {
-            $email = (string) $request->email;
+            $nin = (string) $request->nin;
 
-            return Limit::perMinute(5)->by($email.$request->ip());
+            return Limit::perMinute(5)->by($nin.$request->ip());
         });
 
         RateLimiter::for('two-factor', function (Request $request) {
