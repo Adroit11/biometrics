@@ -82,10 +82,10 @@ const reload = () => {
 
         <form v-else @submit.prevent="submit">
             <div>
-                <JetLabel for="nin" value="National Identity No." />
+                <JetLabel for="email" value="Email Registered With Your NIN" />
                 <JetInput
-                    id="nin"
-                    v-model="form.nin"
+                    id="email"
+                    v-model="form.email"
                     type="text"
                     class="mt-1 block w-full"
                     required
