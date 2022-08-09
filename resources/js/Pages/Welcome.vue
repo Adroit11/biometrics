@@ -38,7 +38,7 @@ defineProps({
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">
                         <div class="flex items-center">
-                            <h1 class="text-gray-800 text-2xl">E-Voting System</h1>
+                            <h1 class="text-gray-800 text-2xl">Online Biometrics(Fingerprint) Voting System</h1>
                         </div>
 
                         <div class="ml-12">
