@@ -42,7 +42,7 @@ watch(() => props.nameUpdate, (value) => {
 <template>
     <form @submit.prevent="updateKey">
         <div class="mt-4">
-            <JetLabel for="keyname" value="Key name" />
+            <JetLabel for="keyname" value="Your name" />
             <JetInput type="text" class="mt-1 block"
                 id="keyname" ref="nameInput"
                 v-model="form.name"

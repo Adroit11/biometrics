@@ -68,7 +68,7 @@ const stop = () => {
         <JetInputError :message="form.errors.register" class="mt-2" />
 
         <div class="mt-4" v-show="!processing || form.errors.name">
-            <JetLabel for="name" value="Key name" />
+            <JetLabel for="name" value="Your name" />
             <JetInput type="text" class="mt-1 block w-3/4"
                 id="name" ref="nameInput"
                 :value="name"

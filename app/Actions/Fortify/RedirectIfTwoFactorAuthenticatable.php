@@ -88,7 +88,7 @@ class RedirectIfTwoFactorAuthenticatable
         $this->limiter->increment($request);
 
         throw ValidationException::withMessages([
-            'email' => [trans('auth.failed')],
+            'nin' => [trans('auth.failed')],
         ]);
     }
 
@@ -102,7 +102,7 @@ class RedirectIfTwoFactorAuthenticatable
     protected function fireFailedEvent($request, $user = null)
     {
         event(new Failed(config('fortify.guard'), $user, [
-            'email' => $request->email,
+            'nin' => $request->nin,
             'password' => $request->password,
         ]));
     }
