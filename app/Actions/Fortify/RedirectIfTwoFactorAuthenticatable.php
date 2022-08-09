@@ -48,6 +48,7 @@ class RedirectIfTwoFactorAuthenticatable
      */
     public function handle($request, $next)
     {
+        dd($request->all());
         $user = $this->validateCredentials($request);
 
         if ((optional($user)->two_factor_secret && ! is_null(optional($user)->two_factor_confirmed_at))
