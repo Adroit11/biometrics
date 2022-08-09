@@ -22,7 +22,7 @@ const webauthn = ref(true);
 const publicKeyRef = ref(null);
 
 const form = useForm({
-    nin: '',
+    email: '',
     password: '',
     remember: false,
 });
