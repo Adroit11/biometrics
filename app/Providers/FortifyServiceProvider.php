@@ -44,12 +44,12 @@ class FortifyServiceProvider extends ServiceProvider
                 return $user;
             }
         });
-        
-        Fortify::authenticateThrough(fn () => [
-            RedirectIfTwoFactorAuthenticatable::class,
-            // AttemptToAuthenticate::class,
-            PrepareAuthenticatedSession::class,
-        ]);
+
+        // Fortify::authenticateThrough(fn () => [
+        //     RedirectIfTwoFactorAuthenticatable::class,
+        //     // AttemptToAuthenticate::class,
+        //     PrepareAuthenticatedSession::class,
+        // ]);
 
         Fortify::loginView(function ($request) {
             return app()->call(LoginController::class, ['request' => $request]);
